@@ -1,15 +1,12 @@
-race_id,url,detector,score,status
-474005,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474005/formatted/,,,"error: Page.goto: Timeout 20000ms exceeded.
-Call log:
-  - navigating to ""https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474005/formatted/"", waiting until ""load""
-"
-474007,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474007/formatted/,katie,1.0,success
-474006,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474006/formatted/,,,"error: Page.goto: Timeout 20000ms exceeded.
-Call log:
-  - navigating to ""https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474006/formatted/"", waiting until ""load""
-"
-474008,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474008/formatted/,katie,0.9500000000000001,success
-461474,https://ca.milesplit.com/meets/251172-prs-15-mile-time-trial-2016/results/461474/formatted/,,,"error: Page.goto: Timeout 20000ms exceeded.
-Call log:
-  - navigating to ""https://ca.milesplit.com/meets/251172-prs-15-mile-time-trial-2016/results/461474/formatted/"", waiting until ""load""
-"
+race_id,url,table_index,table_type,row_count
+474005,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474005/formatted/,1,individual,104
+474005,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474005/formatted/,2,team,7
+474007,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474007/formatted/,1,individual,59
+474007,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474007/formatted/,2,team,5
+474006,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474006/formatted/,1,individual,118
+474006,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474006/formatted/,2,team,7
+474008,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474008/formatted/,1,individual,1
+474008,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474008/formatted/,2,individual,95
+474008,https://ca.milesplit.com/meets/253438-capital-valley-conference-cvc-meet-1-2016/results/474008/formatted/,3,team,8
+461474,https://ca.milesplit.com/meets/251172-prs-15-mile-time-trial-2016/results/461474/formatted/,1,individual,29
+461474,https://ca.milesplit.com/meets/251172-prs-15-mile-time-trial-2016/results/461474/formatted/,2,team,3
