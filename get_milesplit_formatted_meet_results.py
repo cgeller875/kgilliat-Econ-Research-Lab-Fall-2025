@@ -611,16 +611,42 @@ def extract_table_data_wrapped(page_content: str, url: str):
 # PROCESS URLS
 # ============================================================
 
+import platform
+import os
+
+def get_chrome_path():
+    system = platform.system()
+
+    if system == "Windows":
+        return r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+    elif system == "Darwin":  # macOS
+        return "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+    elif system == "Linux":
+        return "/usr/bin/google-chrome"
+
+    # fallback: no custom executable path
+    return None
+
 def process_urls_and_save_wrapped(urls):
     individual_results = pd.DataFrame()
     team_results       = pd.DataFrame()
     metadata_results   = pd.DataFrame()
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            executable_path=r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-        )
+        chrome_path = get_chrome_path()
+
+        if chrome_path and os.path.exists(chrome_path):
+            browser = p.chromium.launch(
+                headless=True,
+                executable_path=chrome_path
+            )
+        else:
+            # Fallback to Playwright's bundled Chromium
+            browser = p.chromium.launch(headless=True)
+              
+        
         page = browser.new_page()
 
         for url in urls:
@@ -685,7 +711,7 @@ def process_urls_and_save_wrapped(urls):
 # ============================================================
 
 if __name__ == "__main__":
-    input_csv = r"C:\Users\coleg\OneDrive\Documents\Econ Research Lab\Kurtis-Econ-Research-Lab-Fall-2025\race_urls_2016.0.csv"
+    input_csv = r"race_urls_2016.0.csv"
 
     df   = pd.read_csv(input_csv)
     # adjust n as you like; 80 is a decent compromise
@@ -716,7 +742,7 @@ if __name__ == "__main__":
     print(summary)
 
     # Write diagnostic outputs
-    output_dir = r"C:\Users\coleg\OneDrive\Documents\Econ Research Lab\Kurtis-Econ-Research-Lab-Fall-2025\output\diagnostic"
+    output_dir = r"output/diagnostic"
     os.makedirs(output_dir, exist_ok=True)
     individual.to_csv(os.path.join(output_dir, "diag_individual.csv"), index=False)
     team.to_csv(os.path.join(output_dir, "diag_team.csv"), index=False)
